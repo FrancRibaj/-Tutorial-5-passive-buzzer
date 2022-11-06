@@ -1,0 +1,29 @@
+//Using the library where melody notes are extracted
+
+#include <pitches.h>
+#include "pitches.h"
+
+// notes in the melody:
+
+int melody[] = {
+  NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C6};
+int duration = 500;  // 500 miliseconds
+
+// Creating a for loop for the iteration of the notes with a delay time of 500 miliseconds and 2000 miliseconds peroid from the start of the first note to the start of second note.
+
+void setup() {
+ 
+}
+ 
+void loop() {  
+  for (int thisNote = 0; thisNote < 8; thisNote++) {
+    // pin8 output the voice, every scale is 0.5 sencond
+    tone(8, melody[thisNote], duration);
+     
+    // period time from the start of notes
+    delay(2000);
+  }
+   
+  // restart after two seconds of the loop after 3000 miliseconds
+  delay(3000);
+}
